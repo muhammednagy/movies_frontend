@@ -13,13 +13,25 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
+    "@apollo/client": "^3.0.0-beta.50",
+    "@apollo/react-hooks": "^3.1.5",
+    "@types/classnames": "^2.2.10",
+    "@types/react-router-dom": "^5.1.4",
+    "apollo-boost": "^0.4.7",
+    "classnames": "^2.2.6",
+    "react": "^16.13.1",
+    "react-apollo": "^3.1.4",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm run watch:css && PORT=3008 react-scripts start",
+    "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
+    "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
+    "gql": "graphql-codegen --config config/codegen.yml"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +47,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^1.4.6",
+    "typescript": "^3.8.3",
+    "postcss-cli": "^7.1.0",
+    "@apollo/link-error": "^2.0.0-beta.3",
+    "@graphql-codegen/add": "^1.15.0",
+    "@graphql-codegen/cli": "^1.15.0",
+    "@graphql-codegen/introspection": "^1.15.0",
+    "@graphql-codegen/time": "^1.15.0",
+    "@graphql-codegen/typescript": "^1.15.0",
+    "@graphql-codegen/typescript-graphql-files-modules": "^1.15.0",
+    "@graphql-codegen/typescript-operations": "^1.15.0",
+    "@graphql-codegen/typescript-react-apollo": "^1.15.0",
+    "@graphql-codegen/typescript-resolvers": "^1.15.0",
+    "@types/graphql": "^14.5.0",
+    "@types/graphql-iso-date": "^3.3.3"
   }
 }
